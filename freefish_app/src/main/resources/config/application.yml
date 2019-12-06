@@ -1,0 +1,30 @@
+server:
+  port: 8079
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    active: ${profile.active}
+  mvc:
+    servlet:
+      load-on-starup: 1
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+    main:
+      allow-bean-definition-overriding: true
+    application:
+      component-scan:
+        base-package: com.jdjr.risk
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+joda-date-time-format: yyyy-MM-dd HH:mm:ss
+dozer:
+  mapping:
+    file:
+      urls: classpath:spring/dozer/dozer-mappings.xml,classpath:spring/dozer/dozer-global-config.xml
+
+

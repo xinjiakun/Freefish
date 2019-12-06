@@ -1,26 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="046fd9da-48da-4ada-8b8c-f20d0ea1e633" name="Default Changelist" comment="" />
+    <list default="true" id="046fd9da-48da-4ada-8b8c-f20d0ea1e633" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/freefish_app/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/SpringBootMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/DataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_app/src/main/resources/properties/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_bean/src/main/java/com/buy/fish/result/BaseRusult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_controller/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/ExceptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/controller/testController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_dao/src/main/java/com/buy/fish/type_handler/BaseEnumTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_dao/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/freefish_service/src/main/java/com/buy/fish/util/MyDateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/java/com/buy/fish/cmd_line/MyCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/cmd_line/MyCommandLineRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/freefish_app/src/main/resources/config/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/freefish_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dao/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/freefish_bean/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FreeFish.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serveice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/freefish_dao/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/Controller/target/" />
     <ignored path="$PROJECT_DIR$/App/target/" />
     <ignored path="$PROJECT_DIR$/Serveice/target/" />
     <ignored path="$PROJECT_DIR$/Dao/target/" />
+    <ignored path="$PROJECT_DIR$/freefish_controller/target/" />
+    <ignored path="$PROJECT_DIR$/freefish_app/target/" />
+    <ignored path="$PROJECT_DIR$/freefish_service/target/" />
+    <ignored path="$PROJECT_DIR$/freefish_dao/target/" />
+    <ignored path="$PROJECT_DIR$/freefish_bean/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/src/main/java/com/buy/fish/cmd_line/MyCommandLineRunner.java">
+        <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/DataSourceConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="178">
+              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
+                <element signature="e#1301#1302#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/SpringBootMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/controller/testController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="28" column="56" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,21 +98,57 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+        <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/SwaggerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="475">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freefish_app/src/main/resources/config/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            <state relative-caret-position="-350">
+              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freefish_bean/src/main/java/com/buy/fish/result/BaseRusult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freefish_app/src/main/resources/properties/db.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="70" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freefish_dao/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/freefish_service/src/main/java/com/buy/fish/util/MyDateUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -57,12 +162,50 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>spring.boot.version</find>
+      <find>autoconfigure</find>
+      <find>boot</find>
+      <find>elast</find>
+      <find>springframework</find>
+      <find>fas</find>
+      <find>guava</find>
+      <find>net</find>
+      <find>do</find>
+      <find>fin</find>
+      <find>ant</find>
+      <find>com</find>
+      <find>dependencies</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/App/src/main/java/com/buy/fish/cmd_line/MyCommandLineRunner.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Serveice/pom.xml" />
+        <option value="$PROJECT_DIR$/App/src/main/java/com/buy/fish/SpringBootMain.java" />
         <option value="$PROJECT_DIR$/App/pom.xml" />
+        <option value="$PROJECT_DIR$/freefish_controller/pom.xml" />
+        <option value="$PROJECT_DIR$/freefish_service/pom.xml" />
+        <option value="$PROJECT_DIR$/freefish_app/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/freefish_bean/pom.xml" />
+        <option value="$PROJECT_DIR$/freefish_dao/pom.xml" />
+        <option value="$PROJECT_DIR$/freefish_dao/src/main/java/com/buy/fish/type_handler/BaseEnumTypeHandler.java" />
+        <option value="$PROJECT_DIR$/freefish_bean/src/main/java/com/buy/fish/result/BaseRusult.java" />
+        <option value="$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/ExceptionController.java" />
+        <option value="$PROJECT_DIR$/freefish_service/src/main/java/com/buy/fish/util/MyDateUtil.java" />
+        <option value="$PROJECT_DIR$/freefish_app/src/main/resources/properties/db.properties" />
+        <option value="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/DataSourceConfig.java" />
+        <option value="$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/testController.java" />
+        <option value="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/SwaggerConfig.java" />
+        <option value="$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/SpringBootMain.java" />
+        <option value="$PROJECT_DIR$/freefish_app/src/main/resources/config/application.yml" />
+        <option value="$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/controller/testController.java" />
       </list>
     </option>
   </component>
@@ -75,8 +218,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/software/apache-maven-3.6.0" />
-        <option name="userSettingsFile" value="D:\software\apache-maven-3.6.0\conf\settings.xml" />
+        <option name="localRepository" value="E:\code\maven\respository" />
+        <option name="userSettingsFile" value="C:\Users\xinjiakun\.m2\settings.xml" />
         <option name="workOffline" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -91,118 +234,309 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="App" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="freefish_app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="App" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="freefish_service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="freefish_service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
         </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="MavenRunner">
-    <option name="skipTests" value="true" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <hideEmptyPackages ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fish" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fish" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd_line" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fish" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="FreeFish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FreeFish" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="properties" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_bean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_bean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_bean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_bean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_bean" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fish" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fish" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="type_handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Freefish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Freefish" type="462c0819:PsiDirectoryNode" />
+              <item name="freefish_service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575128949717" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/freefish_app" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.5" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.buy.fish.util" />
+      <recent name="com.buy.fish.type_handler" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\newProjects\Freefish\freefish_dao\src\main\resources" />
+      <recent name="D:\newProjects\Freefish\freefish_app\src\main\resources\properties" />
       <recent name="D:\projects\FreeFish\App\src\main\resources" />
     </key>
   </component>
@@ -218,6 +552,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="freefish_app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.buy.fish.SpringBootMain" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -229,44 +573,52 @@
       <option name="presentableId" value="Default" />
       <updated>1575126748530</updated>
       <workItem from="1575126753443" duration="2352000" />
+      <workItem from="1575336681912" duration="3328000" />
+      <workItem from="1575340024501" duration="1248000" />
+      <workItem from="1575341394758" duration="1410000" />
+      <workItem from="1575342872199" duration="16300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2352000" />
+    <option name="totallyTimeSpent" value="24638000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" weight="0.3297587" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946696" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32995737" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32942432" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="9" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,22 +628,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dao/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Serveice/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Dao/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/Controller/pom.xml" />
     <entry file="uml://MAVEN/FreeFish:App:1.0-SNAPSHOT">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -303,45 +641,270 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="94.5" y="56.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="95.0" y="56.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>All</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/resources/config/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/src/main/java/com/buy/fish/cmd_line/MyCommandLineRunner.java">
+    <entry file="file://$PROJECT_DIR$/Serveice/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/freefish_dao/src/main/java/com/buy/fish.java" />
+    <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/cmd_line/MyCommandLineRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="325">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.1.4.RELEASE/spring-boot-2.1.4.RELEASE.jar!/org/springframework/boot/SpringBootConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="250">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/pom.xml">
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-dependencies/2.1.4.RELEASE/spring-boot-dependencies-2.1.4.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="524" selection-start-line="524" selection-end-line="524" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        </state>
+      </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_app/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_bean/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_controller/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_dao/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_dao/src/main/java/com/buy/fish/type_handler/BaseEnumTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/ExceptionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_dao/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar!/org/slf4j/LoggerFactory.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_service/src/main/java/com/buy/fish/util/MyDateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_app/src/main/resources/properties/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="70" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/DataSourceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_bean/src/main/java/com/buy/fish/result/BaseRusult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_app/src/main/java/com/buy/fish/SpringBootMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_app/src/main/resources/config/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freefish_controller/src/main/java/com/buy/fish/controller/testController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="28" column="56" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>freefish_controller</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.2.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>
