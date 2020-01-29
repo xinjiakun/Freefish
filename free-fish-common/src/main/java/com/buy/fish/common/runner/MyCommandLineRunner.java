@@ -1,4 +1,4 @@
-package com.buy.fish.cmd_line;
+package com.buy.fish.common.runner;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @title: MyCommandLineRunner
  * @projectName FreeFish
  * @description: TODO
- * @date 2019/11/30 23:26
+ * @date 2020/01/19 16:01
  */
 @Component
 public class MyCommandLineRunner implements CommandLineRunner {
@@ -21,8 +21,9 @@ public class MyCommandLineRunner implements CommandLineRunner {
         try {
             Runtime.getRuntime().exec("cmd /c start http:localhost:" + port + "/swagger-ui.html#/");
             Runtime.getRuntime().exec("cmd /c start http:localhost:" + port);
-        } catch (Exception e) {
 
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

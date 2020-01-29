@@ -6,11 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="free-fish-dao" />
+        <module name="free-fish-dto" />
+        <module name="free-fish-controller" />
+        <module name="free-fish-service" />
         <module name="App" />
-        <module name="Controller" />
-        <module name="Dao" />
-        <module name="Serveice" />
+        <module name="free-fish-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Controller" target="1.5" />
+      <module name="Dao" target="1.5" />
+      <module name="dto" target="1.5" />
+      <module name="Serveice" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

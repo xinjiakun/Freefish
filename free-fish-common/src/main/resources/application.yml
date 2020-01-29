@@ -1,0 +1,36 @@
+server:
+  port: 8067
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    active: ${profile.active}
+  mvc:
+    servlet:
+      load-on-startup: 1
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+    main:
+      allow-bean-definition-overriding: true
+    application:
+      component-scan:
+        base-package: com.buy.fish
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  datasource:
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&serverTimezone=UTC
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+joda-date-time-format: yyyy-MM-dd HH:mm:ss
+dozer:
+  mapping:
+    file:
+      urls: classpath:spring/dozer/dozer-mappings.xml,classpath:spring/dozer/dozer-global-config.xml
+mybatis:
+  type-aliases-package: com.buy.fish.dto.entity
+  mapper-locations: classpath:mybatis/mapper/*.xml
