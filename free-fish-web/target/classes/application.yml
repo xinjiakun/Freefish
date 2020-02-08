@@ -23,7 +23,7 @@ spring:
       write-dates-as-timestamps: false
   datasource:
     username: root
-    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/freefish?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&serverTimezone=UTC
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 joda-date-time-format: yyyy-MM-dd HH:mm:ss
@@ -32,5 +32,5 @@ dozer:
     file:
       urls: classpath:spring/dozer/dozer-mappings.xml,classpath:spring/dozer/dozer-global-config.xml
 mybatis:
-  type-aliases-package: com.buy.fish.dto.entity
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.buy.fish.dao
+  mapper-locations: classpath:mybatis/*.xml

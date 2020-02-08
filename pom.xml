@@ -14,8 +14,8 @@
         <module>free-fish-dao</module>
         <module>free-fish-controller</module>
         <module>free-fish-common</module>
-        <module>dto</module>
         <module>free-fish-dto</module>
+        <module>free-fish-web</module>
     </modules>
     <properties>
         <spring.boot.version>2.1.4.RELEASE</spring.boot.version>

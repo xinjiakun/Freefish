@@ -1,4 +1,4 @@
-package com.buy.fish.common.runner;
+package com.buy.fish.web.runner;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -20,7 +20,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         try {
             Runtime.getRuntime().exec("cmd /c start http:localhost:" + port + "/swagger-ui.html#/");
-            Runtime.getRuntime().exec("cmd /c start http:localhost:" + port);
+//            Runtime.getRuntime().exec("cmd /c start http:localhost:" + port);
 
         }catch (Exception e){
             e.printStackTrace();
