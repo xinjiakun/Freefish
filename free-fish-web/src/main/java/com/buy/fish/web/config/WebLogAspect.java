@@ -1,5 +1,6 @@
 package com.buy.fish.web.config;
 
+import com.alibaba.fastjson.JSON;
 import com.buy.fish.common.pojo.Result;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -58,6 +59,6 @@ public class WebLogAspect {
      */
     @AfterReturning(returning = "result",pointcut = "webLog()")
     public void doAfterReturning(Result result) throws Throwable{
-        logger.info("response:{},{},{}",result.getCode(),result.getMessage(),result.getResult());
+        logger.info("response:{},{},{}",result.getCode(),result.getMessage(), JSON.toJSONString(result.getResult()));
     }
 }

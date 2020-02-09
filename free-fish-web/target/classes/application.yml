@@ -26,6 +26,28 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/freefish?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&serverTimezone=UTC
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cache:
+    type: redis
+    redis:
+      time-to-live: 20000 #缓存超时时间ms
+      cache-null-values: false #是否缓存空值
+  redis:
+    #    redis数据库索引（默认为0）
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        #        连接池最大连接数（使用负数表示没有限制）
+        max-active: 8
+        #        连接池最大阻塞等待时间（负数表示没有限制）
+        max-wait: -1
+        #        连接池中最大空闲连接
+        max-idle: 5
+        #        连接池中最小空闲连接
+        min-idle: 0
+    timeout: 10000 #Redis连接超时时间ms
+    password: 
 joda-date-time-format: yyyy-MM-dd HH:mm:ss
 dozer:
   mapping:
