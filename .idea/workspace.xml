@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="046fd9da-48da-4ada-8b8c-f20d0ea1e633" name="Default Changelist" comment="redis">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/free-fish.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FreeFish.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/free-fish-common/src/main/java/com/buy/fish/common/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/free-fish-common/src/main/java/com/buy/fish/common/config/RedisConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/free-fish-common/target/classes/com/buy/fish/common/config/RedisConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/free-fish-common/target/classes/com/buy/fish/common/config/RedisConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-service/src/main/java/com/buy/fish/service/HomeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-service/src/main/java/com/buy/fish/service/HomeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-service/target/classes/com/buy/fish/service/HomeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-service/target/classes/com/buy/fish/service/HomeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-web/src/main/java/com/buy/fish/web/config/WebLogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-web/src/main/java/com/buy/fish/web/config/WebLogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-web/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-web/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/free-fish-web/target/classes/com/buy/fish/web/config/WebLogAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/free-fish-web/target/classes/com/buy/fish/web/config/WebLogAspect.class" afterDir="false" />
+    <list default="true" id="046fd9da-48da-4ada-8b8c-f20d0ea1e633" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,8 +132,16 @@
       <workItem from="1581211853590" duration="531000" />
       <workItem from="1581212397870" duration="150000" />
       <workItem from="1581212554668" duration="188000" />
-      <workItem from="1581212749551" duration="2762000" />
+      <workItem from="1581212749551" duration="3145000" />
     </task>
+    <task id="LOCAL-00001" summary="redis">
+      <created>1581215580887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581215580887</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,10 +175,10 @@
     </state>
     <state x="371" y="129" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.689/1920.0.1920.1050@0.0.1280.689" timestamp="1579425830028" />
     <state x="371" y="129" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.689@0.0.1280.689" timestamp="1581158936911" />
-    <state x="246" y="0" key="CommitChangelistDialog2" timestamp="1581215219011">
+    <state x="246" y="0" key="CommitChangelistDialog2" timestamp="1581215577371">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="246" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1581215219011" />
+    <state x="246" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1581215577371" />
     <state x="460" y="88" key="FileChooserDialogImpl" timestamp="1580349141947">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
