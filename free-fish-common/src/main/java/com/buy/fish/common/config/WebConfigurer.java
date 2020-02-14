@@ -16,7 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableAspectJAutoProxy
 public class WebConfigurer implements WebMvcConfigurer {
 
-    public void addCorsMappings(CorsRegistry registry){
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowedMethods("GET","HEAD","POST","PUT","DELETE","OPTIONS")
