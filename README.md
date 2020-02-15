@@ -3,7 +3,7 @@
 
 
 
-### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/xinjiakun/freefish-vue.git) 项目仓库查看
+### 前台页面为基于Vue的独立项目 请跳转至 [freefish-vue](https://github.com/xinjiakun/freefish-vue.git) 项目仓库查看
 
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
