@@ -1,41 +1,10 @@
-# XMall
-[![AUR](https://img.shields.io/badge/GPL-v3-red)](https://github.com/Exrick/xmall/blob/master/License)
-[![](https://img.shields.io/badge/Author-Exrick-orange.svg)](http://blog.exrick.cn)
-[![](https://img.shields.io/badge/version-1.1-brightgreen)](https://github.com/Exrick/xmall)
-[![GitHub stars](https://img.shields.io/github/stars/Exrick/xmall.svg?style=social&label=Stars)](https://github.com/Exrick/xmall)
-[![GitHub forks](https://img.shields.io/github/forks/Exrick/xmall.svg?style=social&label=Fork)](https://github.com/Exrick/xmall)
+# freefish
+> 作者本科毕业设计项目 
 
-> 作者本科毕业设计项目 期待您的捐赠支持
 
-### [X系列项目宣传视频](https://www.bilibili.com/video/av23121122/)
-- 作者亲自制作 [点我观看](https://www.bilibili.com/video/av23121122/)
 
-### 项目已部署，在线Demo
-- 前台商城：http://xmall.exrick.cn/
-- 后台管理系统：http://xmadmin.exrick.cn/
+### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/xinjiakun/freefish-vue.git) 项目仓库查看
 
-### 单体版获取
-- 单体XMall系统 非分布式 可跑在1g1核服务器上
-- 获取方式：进入商城 http://xmall.exrick.cn/ 登陆后随意测试支付商品 填写捐赠信息 支付成功后将自动发至您填写的邮箱
-
-### 前台页面为基于Vue的独立项目 请跳转至 [xmall-front](https://github.com/Exrick/xmall-front) 项目仓库查看
-
-### 作者其他项目推荐
-- [XPay个人免签收款支付系统](https://github.com/Exrick/xpay) 无需挂机App 自动回调
-
-- [XMall微信小程序APP前端 现已开源！](https://github.com/Exrick/xmall-weapp)
-    
-    [![WX20190924-234416@2x.png](https://s2.ax1x.com/2019/10/06/ucEsBD.md.png)](https://www.bilibili.com/video/av70226175)
-
-- [X-Boot前后端分离开发平台](https://github.com/Exrick/x-boot)
-
-    ![](https://i.loli.net/2018/07/21/5b52e274d2085.png)
-    
-- 个人机器学习笔记
-    - [Machine-Learning](https://github.com/Exrick/Machine-Learning)
-
-- Spring Cloud版
-    - [X-Cloud](https://github.com/Exrick/x-cloud) 框架开发中
 ### 基于SOA架构的分布式购物电商商城
 - [x] 后台管理系统：管理商品、订单、类目、商品规格属性、用户、权限、系统统计、系统日志以及前台内容等功能
 - [x] 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作
@@ -177,13 +146,5 @@
         @RateLimiter(limit = 1, timeout = 5000)
         ```
     - 支持多维度IP、uid等限流 详见代码
-### 技术疑问交流
-- QQ交流群 `475743731(付费)`，可获取各项目详细图文文档、xmall毕设PPT [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=7b60cec12ba93ebed7568b0a63f22e6e034c0d1df33125ac43ed753342ec6ce7)
-- 免费交流群 `562962309` [![](http://pub.idqqimg.com/wpa/images/group.png)](http://shang.qq.com/wpa/qunwpa?idkey=52f6003e230b26addeed0ba6cf343fcf3ba5d97829d17f5b8fa5b151dba7e842)
 
-- 作者博客：[http://blog.exrick.cn](http://blog.exrick.cn)
-### 商用授权
-- 个人学习使用遵循GPL开源协议
-- 商用需联系作者低价授权
-### [捐赠](http://xmall.exrick.cn)
 

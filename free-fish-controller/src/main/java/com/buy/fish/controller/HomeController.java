@@ -1,18 +1,16 @@
 package com.buy.fish.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.buy.fish.common.pojo.Result;
 import com.buy.fish.common.pojo.ResultUtil;
-import com.buy.fish.dto.TbPanel;
+import com.buy.fish.dto.request.GoodsDTO;
+import com.buy.fish.dto.response.GoodVO;
 import com.buy.fish.service.HomeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -36,18 +34,23 @@ public class HomeController {
         String array = "[{'value':'" + name + "'},{'value':'" + name + name + "'}]";
         JSONArray jsonArray = JSONArray.parseArray(array);
 //        return new ResultUtil().setData(jsonArray);
-        return new ResultUtil().setData(null    );
+        return new ResultUtil().setData(null);
 //        return new ResultUtil().setData(homeService.getHome());
     }
 
-    @ApiOperation(value = "首页获取")
+    @ApiOperation(value = "搜索")
     @RequestMapping(value = "/select", method = RequestMethod.POST)
     @ResponseBody
-    public Result<JSONArray> getSelect(String name) {
-        String array = "[{'value':'" + name + "'},{'value':'" + name + name + "'}]";
-        JSONArray jsonArray = JSONArray.parseArray(array);
-//        return new ResultUtil().setData(jsonArray);
-        return new ResultUtil().setData(null    );
-//        return new ResultUtil().setData(homeService.getHome());
+    public Result<List<GoodVO>> getSelect(String select) {
+        return homeService.getSelect(select);
     }
+
+    @ApiOperation(value = "全部商品及条件查询")
+    @RequestMapping(value = "/allGoods", method = RequestMethod.POST)
+    @ResponseBody
+    public Result<List<GoodVO>> getAllGoodsSelect(GoodsDTO goodsDTO) {
+        return homeService.getGoods(goodsDTO);
+    }
+
+
 }

@@ -1,10 +1,11 @@
 package com.buy.fish.service;
 
-import com.alibaba.fastjson.JSON;
 import com.buy.fish.common.pojo.Result;
 import com.buy.fish.common.pojo.ResultUtil;
 import com.buy.fish.dao.TbPanelMapper;
-import com.buy.fish.dto.TbPanel;
+import com.buy.fish.dto.entity.TbPanel;
+import com.buy.fish.dto.request.GoodsDTO;
+import com.buy.fish.dto.response.GoodVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class HomeServiceImpl implements HomeService{
     @Autowired
     private RedisTemplate redisTemplate;
 
-    public Result<List<TbPanel>> getHome(){
+    public Result<List<GoodVO>> getHome(){
         List<TbPanel> tbPanels;
         String key = "home";
         ValueOperations<String, List<TbPanel>> operations = redisTemplate.opsForValue();
@@ -48,5 +49,15 @@ public class HomeServiceImpl implements HomeService{
             logger.info("home缓存添加成功");
         }
         return new ResultUtil().setData(tbPanels);
+    }
+
+    @Override
+    public Result<List<GoodVO>> getSelect(String select) {
+        return null;
+    }
+
+    @Override
+    public Result<List<GoodVO>> getGoods(GoodsDTO goodsDTO) {
+        return null;
     }
 }

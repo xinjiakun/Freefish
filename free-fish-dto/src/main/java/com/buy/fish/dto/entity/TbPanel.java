@@ -1,4 +1,4 @@
-package com.buy.fish.dto;
+package com.buy.fish.dto.entity;
 
 import lombok.Getter;
 import lombok.Setter;
