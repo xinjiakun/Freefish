@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @ClassName GoodVO
@@ -26,7 +27,6 @@ public class GoodVO implements Serializable {
     private Integer skuId;
     /**
      * 标题
-
      */
     private String title;
     /**
@@ -42,23 +42,15 @@ public class GoodVO implements Serializable {
      */
     private Integer price;
     /**
-     * 备用图1
-     */
-    private String aliImages1;
-    /**
-     * 备用图2
-     */
-    private String aliImages2;
-    /**
-     * 备用图3
-     */
-    private String aliImages3;
-    /**
-     * 备用图4
-     */
-    private String aliImages4;
-    /**
      * 新旧程度
      */
-    private Integer oldOr;
+    private String oldOr;
+    /**
+     * 备用图
+     */
+    private ImagesDO imagesDO;
+    /**
+     * 评论
+     */
+    private List<CommentVO> commentVOS;
 }

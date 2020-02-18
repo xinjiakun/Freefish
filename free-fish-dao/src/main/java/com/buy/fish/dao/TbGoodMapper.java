@@ -3,6 +3,7 @@ package com.buy.fish.dao;
 import com.buy.fish.dto.entity.TbGoodPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -26,19 +27,28 @@ public interface TbGoodMapper {
      * 查询指定行数据
      *
      * @param offset 查询起始位置
-     * @param limit 查询条数
+     * @param limit  查询条数
      * @return 对象列表
      */
     List<TbGoodPO> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
 
     /**
-     * 通过实体作为筛选条件查询
+     * 列表页条件查询
      *
-     * @param tbGoodPO 实例对象
+     * @param lowerPrice highPrice
      * @return 对象列表
      */
-    List<TbGoodPO> queryAll(TbGoodPO tbGoodPO);
+    List<TbGoodPO> queryAll(@Param("lowerPrice") Integer lowerPrice,@Param("highPrice") Integer highPrice,
+                            @Param("typeOb") Integer typeOb, @Param("oldOr")Integer oldOr,@Param("sort") String sort);
+
+    /**
+     * 首页条件查询
+     *
+     * @param
+     * @return 对象列表
+     */
+    List<TbGoodPO> queryHome(@Param("sort") String sort);
 
     /**
      * 新增数据

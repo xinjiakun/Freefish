@@ -1,6 +1,7 @@
 package com.buy.fish.service;
 
 import com.buy.fish.common.pojo.Result;
+import com.buy.fish.dto.entity.TbGoodPO;
 import com.buy.fish.dto.request.GoodsDTO;
 import com.buy.fish.dto.response.GoodVO;
 
@@ -11,23 +12,32 @@ public interface HomeService {
      * 获取首页 热门商品 最新上架 数码电子
      *
      * @param /
-     * @return List<TbGood>
+     * @return List<GoodVO>
      */
-    Result<List<GoodVO>> getHome();
+    List<List<GoodVO>> getHome();
+
+    /**
+     * 实时搜索
+     *
+     * @param select
+     * @return List<GoodVO>
+     */
+    List<GoodVO> getNowSelect(String select);
 
     /**
      * 搜索
      *
      * @param select
-     * @return List<TbGood>
+     * @return List<GoodVO>
      */
-    Result<List<GoodVO>> getSelect(String select);
+    List<TbGoodPO> getSelect(String select);
+
 
     /**
-     * 全部商品及条件查询(价格、新旧、类别)
+     * 全部商品及条件查询(价格、新旧、类别)及排序
      *
      * @param goodsDTO
-     * @return List<TbGood>
+     * @return List<GoodVO>
      */
-    Result<List<GoodVO>> getGoods(GoodsDTO goodsDTO);
+    List<GoodVO> getGoods(GoodsDTO goodsDTO);
 }

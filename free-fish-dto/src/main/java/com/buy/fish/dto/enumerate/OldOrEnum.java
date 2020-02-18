@@ -18,7 +18,7 @@ public enum OldOrEnum implements BaseEnum {
     private Integer code;
     private String name;
 
-    OldOrEnum(Integer code, String name) {
+    OldOrEnum(Integer code, String name ){
         this.code = code;
         this.name = name;
     }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 设置日志输出为LOG4J -->
+        <setting name="logImpl" value="LOG4J" />
+        <!--将以下画线方式命名的数据库列映射到 Java 对象的驼峰式命名属性中-->
+        <setting name= "mapUnderscoreToCamelCase" value="true" />
+    </settings>
+    <!--简化类命名空间 -->
+    <typeAliases>
+        <package name="com.buy.fish.dto.entity" />
+    </typeAliases>
+
+    <mappers>
+        <!--常规做法-->
+        <mapper resource="mybatis/TbPanelMapper.xml" />
+        <mapper resource="mybatis/TbGoodMapper.xml" />
+        <mapper resource="mybatis/TbCommentMapper.xml" />
+        <mapper resource="mybatis/TbUserMapper.xml" />
+
+    </mappers>
+</configuration>

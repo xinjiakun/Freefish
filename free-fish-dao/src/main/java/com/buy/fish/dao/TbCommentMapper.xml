@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buy.fish.dao.TbCommentMapper">
+
+    <resultMap type="com.buy.fish.dto.entity.TbCommentPO" id="TbCommentMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="goodId" column="good_id" jdbcType="INTEGER"/>
+        <result property="fromUserId" column="from_user_id" jdbcType="INTEGER"/>
+        <result property="toUserId" column="to_user_id" jdbcType="INTEGER"/>
+        <result property="comment" column="comment" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+    </resultMap>
+    <resultMap type="com.buy.fish.dto.response.CommentVO" id="CommenVOtMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="toName" column="toName" jdbcType="VARCHAR"/>
+        <result property="goodId" column="good_id" jdbcType="INTEGER"/>
+        <result property="fromUserId" column="from_user_id" jdbcType="INTEGER"/>
+        <result property="headImg" column="headImg" jdbcType="VARCHAR"/>
+        <result property="comment" column="comment" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbCommentMap">
+        select
+          id, good_id, from_user_id, to_user_id, comment, time, parent_id
+        from freefish.tb_comment
+        where id = #{id}
+    </select>
+
+    <!--查询顶级评论-->
+    <select id="queryByGoodId" resultMap="CommenVOtMap">
+        SELECT
+        co.id,
+        co.good_id,
+        co.comment,
+        co.from_user_id,
+        co.time,
+        co.parent_id,
+        us.name,
+        us.headImg,
+        ust.name as toName
+        FROM
+        freefish.tb_comment co
+        LEFT JOIN tb_user us ON co.from_user_id = us.id
+        LEFT JOIN tb_user ust on co.to_user_id = ust.id
+        WHERE
+        <if test="goodId != null and goodId != ''">
+            good_id = #{goodId} and parent_id=0 order by time desc
+        </if>
+    </select>
+
+    <!--查询子评论-->
+    <select id="queryByparentId" resultMap="CommenVOtMap">
+        SELECT
+        co.id,
+        co.good_id,
+        co.comment,
+        co.time,
+        co.parent_id,
+        us.name,
+        us.headImg,
+        ust.name as toName
+        FROM
+        freefish.tb_comment co
+        LEFT JOIN tb_user us ON co.from_user_id = us.id
+        LEFT JOIN tb_user ust on co.to_user_id = ust.id
+        WHERE
+        <if test="parentId != null and parentId != ''">
+            parent_id=#{parentId} order by time desc
+        </if>
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbCommentMap">
+        select
+          id, good_id, from_user_id, to_user_id, comment, time, parent_id
+        from freefish.tb_comment
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TbCommentMap">
+        select
+        id, good_id, from_user_id, to_user_id, comment, time, parent_id
+        from freefish.tb_comment
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="goodId != null">
+                and good_id = #{goodId}
+            </if>
+            <if test="fromUserId != null">
+                and from_user_id = #{fromUserId}
+            </if>
+            <if test="toUserId != null">
+                and to_user_id = #{toUserId}
+            </if>
+            <if test="comment != null and comment != ''">
+                and comment = #{comment}
+            </if>
+            <if test="time != null">
+                and time = #{time}
+            </if>
+            <if test="parentId != null">
+                and parent_id = #{parentId}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into freefish.tb_comment(to_user_id, comment, time, parent_id, good_id, from_user_id)
+        values (#{toUserId}, #{comment}, #{time}, #{parentId},#{goodId},#{fromUserId})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update freefish.tb_comment
+        <set>
+            <if test="toUserId != null">
+                to_user_id = #{toUserId},
+            </if>
+            <if test="comment != null and comment != ''">
+                comment = #{comment},
+            </if>
+            <if test="time != null">
+                time = #{time},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from freefish.tb_comment where id = #{id}
+    </delete>
+
+</mapper>

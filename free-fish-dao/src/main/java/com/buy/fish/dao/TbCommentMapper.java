@@ -1,6 +1,7 @@
 package com.buy.fish.dao;
 
 import com.buy.fish.dto.entity.TbCommentPO;
+import com.buy.fish.dto.response.CommentVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -40,6 +41,20 @@ public interface TbCommentMapper {
      */
     List<TbCommentPO> queryAll(TbCommentPO tbCommentPO);
 
+    /**
+     * 查询顶级评论
+     *
+     * @param goodId 商品ID
+     * @return 对象列表
+     */
+    List<CommentVO> queryByGoodId(String goodId);
+    /**
+     * 查询子评论
+     *
+     * @param parentId 父评论ID
+     * @return 对象列表
+     */
+    List<CommentVO> queryByparentId(Integer parentId);
     /**
      * 新增数据
      *

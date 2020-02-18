@@ -48,11 +48,23 @@ spring:
         min-idle: 0
     timeout: 10000 #Redis连接超时时间ms
     password:
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true #仓库中存储数据
+      cluster-name: elasticsearch #节点名字，默认elasticsearch
+      cluster-nodes: 127.0.0.1:9300 #节点地址，多个节点用逗号隔开 默认 9300 是 Java 客户端的端口。9200 是支持 Restful HTTP 的接口
+      node.name: node-1
 joda-date-time-format: yyyy-MM-dd HH:mm:ss
 dozer:
   mapping:
     file:
       urls: classpath:spring/dozer/dozer-mappings.xml,classpath:spring/dozer/dozer-global-config.xml
 mybatis:
-  type-aliases-package: com.buy.fish.dao
-  mapper-locations: classpath:mybatis/*.xml
+#  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.buy.fish.dto.entity
+  mapper-locations: classpath* :com/buy/fish/dao/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

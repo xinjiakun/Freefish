@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.buy.fish.dao.TbGoodMapper">
 
-    <resultMap type="com.buy.fish.entity.TbGood" id="TbGoodMap">
+    <resultMap type="com.buy.fish.dto.entity.TbGoodPO" id="TbGoodMap">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="skuId" column="sku_id" jdbcType="INTEGER"/>
         <result property="title" column="title" jdbcType="VARCHAR"/>
@@ -19,12 +19,14 @@
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="scoreNum" column="score_num" jdbcType="INTEGER"/>
     </resultMap>
+
 
     <!--查询单个-->
     <select id="queryById" resultMap="TbGoodMap">
         select
-          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
         from freefish.tb_good
         where id = #{id}
     </select>
@@ -32,72 +34,62 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbGoodMap">
         select
-          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
         from freefish.tb_good
         limit #{offset}, #{limit}
     </select>
 
-    <!--通过实体作为筛选条件查询-->
+    <!--列表页条件查询-->
     <select id="queryAll" resultMap="TbGoodMap">
         select
-          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
         from freefish.tb_good
         <where>
-            <if test="id != null">
-                and id = #{id}
+            <if test="lowerPrice != null and highPrice != null ">
+                and price &gt;= #{lowerPrice}
+                and price &lt;= #{highPrice}
             </if>
-            <if test="skuId != null">
-                and sku_id = #{skuId}
+            <if test="lowerPrice != null and highPrice == null ">
+                and price &gt;= #{lowerPrice}
             </if>
-            <if test="title != null and title != ''">
-                and title = #{title}
-            </if>
-            <if test="subTitle != null and subTitle != ''">
-                and sub_title = #{subTitle}
-            </if>
-            <if test="aliImage != null and aliImage != ''">
-                and ali_image = #{aliImage}
-            </if>
-            <if test="price != null">
-                and price = #{price}
-            </if>
-            <if test="aliImages1 != null and aliImages1 != ''">
-                and ali_images_1 = #{aliImages1}
-            </if>
-            <if test="aliImages2 != null and aliImages2 != ''">
-                and ali_images_2 = #{aliImages2}
-            </if>
-            <if test="aliImages3 != null and aliImages3 != ''">
-                and ali_images_3 = #{aliImages3}
-            </if>
-            <if test="aliImages4 != null and aliImages4 != ''">
-                and ali_images_4 = #{aliImages4}
+            <if test="lowerPrice == null and highPrice != null ">
+                and price &lt;= #{highPrice}
             </if>
             <if test="typeOb != null and typeOb != ''">
                 and type_ob = #{typeOb}
             </if>
-            <if test="oldOr != null">
+            <if test="oldOr != null and oldOr != ''">
                 and old_or = #{oldOr}
             </if>
-            <if test="score != null">
-                and score = #{score}
-            </if>
-            <if test="createTime != null">
-                and create_time = #{createTime}
-            </if>
-            <if test="updateTime != null">
-                and update_time = #{updateTime}
-            </if>
-            <if test="userId != null">
-                and user_id = #{userId}
+        </where>
+        <if test="sort != null and sort =='endToHigh'">
+            order by price
+        </if>
+        <if test="sort != null and sort !='endToHigh'">
+            order by ${sort} desc
+        </if>
+    </select>
+
+    <!--首页查询-->
+    <select id="queryHome" resultMap="TbGoodMap">
+        select
+        id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+        from freefish.tb_good
+        <where>
+            <if test="sort =='typeObj'">
+                and type_ob = "配件"
             </if>
         </where>
+        <if test="sort != null and sort !='typeObj'">
+            order by ${sort} desc
+        </if>
+        limit 4
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into freefish.tb_good(sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time)
-        values (#{skuId}, #{title}, #{subTitle}, #{aliImage}, #{price}, #{aliImages1}, #{aliImages2}, #{aliImages3}, #{aliImages4}, #{typeOb}, #{oldOr}, #{score}, #{createTime}, #{updateTime})
+        insert into freefish.tb_good(sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, score_num)
+        values (#{skuId}, #{title}, #{subTitle}, #{aliImage}, #{price}, #{aliImages1}, #{aliImages2}, #{aliImages3}, #{aliImages4}, #{typeOb}, #{oldOr}, #{score}, #{createTime}, #{updateTime},#{scoreNum})
     </insert>
 
     <!--通过主键修改数据-->
@@ -145,6 +137,9 @@
             </if>
             <if test="updateTime != null">
                 update_time = #{updateTime},
+            </if>
+            <if test="scoreNum != null">
+                score_num = #{scoreNum},
             </if>
         </set>
         where id = #{id}

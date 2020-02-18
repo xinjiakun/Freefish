@@ -16,10 +16,12 @@
     <sql id="Base_Column_List">
     id, name, type, sort_order, position, limit_num, status, remark, created, updated
   </sql>
+
     <select id="selectByExample" resultMap="BaseResultMap">
         select
         *
         from tb_panel
+
 
     </select>
 </mapper>

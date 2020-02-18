@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buy.fish.dao.TbGoodMapper">
+
+    <resultMap type="com.buy.fish.dto.entity.TbGoodPO" id="TbGoodMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="skuId" column="sku_id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="subTitle" column="sub_title" jdbcType="VARCHAR"/>
+        <result property="aliImage" column="ali_image" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="INTEGER"/>
+        <result property="aliImages1" column="ali_images_1" jdbcType="VARCHAR"/>
+        <result property="aliImages2" column="ali_images_2" jdbcType="VARCHAR"/>
+        <result property="aliImages3" column="ali_images_3" jdbcType="VARCHAR"/>
+        <result property="aliImages4" column="ali_images_4" jdbcType="VARCHAR"/>
+        <result property="typeOb" column="type_ob" jdbcType="VARCHAR"/>
+        <result property="oldOr" column="old_or" jdbcType="INTEGER"/>
+        <result property="score" column="score" jdbcType="OTHER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="scoreNum" column="score_num" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbGoodMap">
+        select
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+        from freefish.tb_good
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbGoodMap">
+        select
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+        from freefish.tb_good
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--列表页条件查询-->
+    <select id="queryAll" resultMap="TbGoodMap">
+        select
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+        from freefish.tb_good
+        <where>
+            <if test="lowerPrice != null and highPrice != null ">
+                and price &gt;= #{lowerPrice}
+                and price &lt;= #{highPrice}
+            </if>
+            <if test="lowerPrice != null and highPrice == null ">
+                and price &gt;= #{lowerPrice}
+            </if>
+            <if test="lowerPrice == null and highPrice != null ">
+                and price &lt;= #{highPrice}
+            </if>
+            <if test="typeOb != null and typeOb != ''">
+                and type_ob = #{typeOb}
+            </if>
+            <if test="oldOr != null and oldOr != ''">
+                and old_or = #{oldOr}
+            </if>
+        </where>
+        <if test="sort != null and sort =='endToHigh'">
+            order by price
+        </if>
+        <if test="sort != null and sort !='endToHigh'">
+            order by ${sort} desc
+        </if>
+    </select>
+
+    <!--首页查询-->
+    <select id="queryHome" resultMap="TbGoodMap">
+        select
+        id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+        from freefish.tb_good
+        <where>
+            <if test="sort =='typeObj'">
+                and type_ob = "配件"
+            </if>
+        </where>
+        <if test="sort != null and sort !='typeObj'">
+            order by ${sort} desc
+        </if>
+        limit 4
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into freefish.tb_good(sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, score_num)
+        values (#{skuId}, #{title}, #{subTitle}, #{aliImage}, #{price}, #{aliImages1}, #{aliImages2}, #{aliImages3}, #{aliImages4}, #{typeOb}, #{oldOr}, #{score}, #{createTime}, #{updateTime},#{scoreNum})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update freefish.tb_good
+        <set>
+            <if test="skuId != null">
+                sku_id = #{skuId},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="subTitle != null and subTitle != ''">
+                sub_title = #{subTitle},
+            </if>
+            <if test="aliImage != null and aliImage != ''">
+                ali_image = #{aliImage},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="aliImages1 != null and aliImages1 != ''">
+                ali_images_1 = #{aliImages1},
+            </if>
+            <if test="aliImages2 != null and aliImages2 != ''">
+                ali_images_2 = #{aliImages2},
+            </if>
+            <if test="aliImages3 != null and aliImages3 != ''">
+                ali_images_3 = #{aliImages3},
+            </if>
+            <if test="aliImages4 != null and aliImages4 != ''">
+                ali_images_4 = #{aliImages4},
+            </if>
+            <if test="typeOb != null and typeOb != ''">
+                type_ob = #{typeOb},
+            </if>
+            <if test="oldOr != null">
+                old_or = #{oldOr},
+            </if>
+            <if test="score != null">
+                score = #{score},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="scoreNum != null">
+                score_num = #{scoreNum},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from freefish.tb_good where id = #{id}
+    </delete>
+
+</mapper>

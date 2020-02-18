@@ -33,21 +33,21 @@ public class ItemController {
     @ApiOperation(value = "获取商品详情及评论")
     @RequestMapping(value = "/good", method = RequestMethod.POST)
     @ResponseBody
-    public Result<GoodVO> getGood(GoodsDTO goodsDTO) {
-        return itemService.getGoodDetails(goodsDTO);
+    public Result<GoodVO> getGood(Integer id) {
+        return new ResultUtil().setData(itemService.getGoodDetails(id));
     }
 
     @ApiOperation(value = "对商品评分")
     @RequestMapping(value = "/score", method = RequestMethod.POST)
     @ResponseBody
-    public Result getScore(String score) {
-        return itemService.getScore(score);
+    public Result getScore(String score, Integer id) {
+        return new ResultUtil().setData(itemService.getScore(score,id));
     }
 
     @ApiOperation(value = "写评论")
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
     @ResponseBody
     public Result getComment(CommentDTO commentDTO) {
-        return itemService.getComment(commentDTO);
+        return new ResultUtil().setData(itemService.getComment(commentDTO));
     }
 }

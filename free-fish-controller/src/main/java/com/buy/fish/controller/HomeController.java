@@ -3,6 +3,7 @@ package com.buy.fish.controller;
 import com.alibaba.fastjson.JSONArray;
 import com.buy.fish.common.pojo.Result;
 import com.buy.fish.common.pojo.ResultUtil;
+import com.buy.fish.dto.entity.TbGoodPO;
 import com.buy.fish.dto.request.GoodsDTO;
 import com.buy.fish.dto.response.GoodVO;
 import com.buy.fish.service.HomeService;
@@ -30,26 +31,36 @@ public class HomeController {
     @ApiOperation(value = "首页获取")
     @RequestMapping(value = "/home", method = RequestMethod.POST)
     @ResponseBody
-    public Result<JSONArray> getHome(String name) {
-        String array = "[{'value':'" + name + "'},{'value':'" + name + name + "'}]";
+    public Result<List<GoodVO>> getHome(String name) {
+
+//        return new ResultUtil().setData(null);
+        return new ResultUtil().setData(homeService.getHome());
+    }
+
+
+    @ApiOperation(value = "实时搜索")
+    @RequestMapping(value = "/nowSelect", method = RequestMethod.POST)
+    @ResponseBody
+    public Result<List<GoodVO>> getNowSelect(String select) {
+        String array = "[{'value':'" + select + "'},{'value':'" + select + select + "'}]";
         JSONArray jsonArray = JSONArray.parseArray(array);
-//        return new ResultUtil().setData(jsonArray);
-        return new ResultUtil().setData(null);
-//        return new ResultUtil().setData(homeService.getHome());
+        return new ResultUtil().setData(jsonArray);
+//                return new ResultUtil().setData(homeService.getNowSelect(select));
     }
 
     @ApiOperation(value = "搜索")
     @RequestMapping(value = "/select", method = RequestMethod.POST)
     @ResponseBody
-    public Result<List<GoodVO>> getSelect(String select) {
-        return homeService.getSelect(select);
+    public Result<List<TbGoodPO>> getSelect(String select) {
+//        return new ResultUtil().setData(select);
+        return new ResultUtil().setData(homeService.getSelect(select));
     }
 
     @ApiOperation(value = "全部商品及条件查询")
     @RequestMapping(value = "/allGoods", method = RequestMethod.POST)
     @ResponseBody
     public Result<List<GoodVO>> getAllGoodsSelect(GoodsDTO goodsDTO) {
-        return homeService.getGoods(goodsDTO);
+        return new ResultUtil().setData(homeService.getGoods(goodsDTO));
     }
 
 

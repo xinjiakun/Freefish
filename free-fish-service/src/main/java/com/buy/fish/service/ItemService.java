@@ -11,10 +11,10 @@ public interface ItemService {
     /**
      * 获取商品详情及评论
      *
-     * @param goodsDTO
+     * @param id
      * @return List<GoodVO>
      */
-    Result<GoodVO> getGoodDetails(GoodsDTO goodsDTO);
+    GoodVO getGoodDetails(Integer id);
 
     /**
      * 对商品评分
@@ -22,7 +22,7 @@ public interface ItemService {
      * @param score
      * @return Result
      */
-    Result getScore(String score);
+    boolean getScore(String score, Integer id);
 
     /**
      * 商品评论
@@ -30,6 +30,6 @@ public interface ItemService {
      * @param commentDTO
      * @return Result
      */
-    Result getComment(CommentDTO commentDTO);
+    boolean getComment(CommentDTO commentDTO);
 
 }

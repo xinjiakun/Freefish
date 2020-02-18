@@ -22,13 +22,21 @@ public class CommentVO implements Serializable {
      */
     private Integer id;
     /**
+     * 商品id
+     */
+    private Integer goodId;
+    /**
      * 评论用户名
      */
     private String name;
     /**
      * 评论用户头像
      */
-    private String img;
+    private String headImg;
+    /**
+     * 评论from用户id
+     */
+    private Integer fromUserId;
     /**
      * 评论to用户名
      */
@@ -41,6 +49,22 @@ public class CommentVO implements Serializable {
      * 评论时间
      */
     private Date time;
+    /**
+     * 父评论id
+     */
+    private Integer parentId;
+    /**
+     * 子评论数量
+     */
+    private Integer commentNum;
+    /**
+     * 输入框默认关闭
+     */
+    private final boolean inputShow = false;
+    /**
+     * 子评论默认关闭
+     */
+    private final boolean senShow = false;
     /**
      * 子评论
      */

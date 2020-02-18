@@ -2,7 +2,10 @@ package com.buy.fish.dto.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
 
+import java.lang.annotation.Documented;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -14,15 +17,18 @@ import java.io.Serializable;
  */
 @Setter
 @Getter
+@Document(indexName = "freeFish" , type = "tbGoodPO")
 public class TbGoodPO implements Serializable {
     private static final long serialVersionUID = 640092019396004382L;
     /**
     * 主键
     */
+    @Id
     private Integer id;
     /**
     * 商品编号
     */
+
     private Integer skuId;
     /**
     * 标题
@@ -81,6 +87,9 @@ public class TbGoodPO implements Serializable {
     * 上传商品用户id
     */
     private Integer userId;
-
+    /**
+     * 参与评分人数
+     */
+    private float scoreNum;
 
 }
