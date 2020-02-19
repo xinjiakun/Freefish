@@ -41,9 +41,9 @@ Elasticsearch也使用Java开发并使用Lucene作为其核心来实现所有索
 ### 踩坑解决错误
 
 1. 服务器客户端版本需完全匹配
-	以我为例: 
-	客户端版本：spring-boot-starter-data-elasticsearch:2.1.4.RELEASE(org.elasticsearch.client:transport:6.4.3)
-	服务器版本：elasticsearch-6.5.4
+ - 以我为例: 
+  - 客户端版本：spring-boot-starter-data-elasticsearch:2.1.4.RELEASE(org.elasticsearch.client:transport:6.4.3)
+  - 服务器版本：elasticsearch-6.5.4
 
 ### 测试是否启动成功
 
@@ -84,9 +84,11 @@ npm run start
  [logstash.conf具体信息](https://github.com/xinjiakun/Freefish/blob/master/logstash.conf)
  
  新建jdbc.sql (定期执行脚本 将mysql数据导入es)
- [logstash.conf具体信息](https://github.com/xinjiakun/Freefish/blob/master/jdbc.sql)
+ [jdbc.sql具体信息](https://github.com/xinjiakun/Freefish/blob/master/jdbc.sql)
  修改成自己的数据库连接信息 本地驱动路径 jdbc.sql路径 es 索引 类型 id(对应mysql数据库)
+ 
  (注意:windows下的文本编码需要为ANSI，否则运行将会出错, 另外注意是"hosts", 我这边如果写成"host"会出错，另外下面长长的一段连接后面是我加上去的，如果不加上去，运行的时候会报时间什么的错误，mysql驱动要跟你的mysql数据库版本对应起来，否则会出错)
  
- logstash.bat -f logstash.conf
+ 最后执行
+- logstash.bat -f logstash.conf
  
