@@ -53,7 +53,7 @@
     - freefish.sql：数据库文件
 ### 本地开发运行部署
 - 下载zip直接解压或安装git后执行克隆命令 `git clone https://github.com/xinjiakun/Freefish.git`
-- 安装各中间件并启动：[Redis](https://www.runoob.com/redis/redis-install.html)、[Elasticsearch](https://github.com/xinjiakun/Freefish/Elasticsearch.md)
+- 安装各中间件并启动：[Redis](https://www.runoob.com/redis/redis-install.html)、[Elasticsearch](https://github.com/xinjiakun/Freefish/blob/master/Elasticsearch.md)
 - [Maven安装和在IDEA中配置](https://github.com/Exrick/xmall/blob/master/study/Maven.md)
 - 使用IDEA, `File-Open` 直接打开freefish项目，点击右下角 `Import Changes` 等待安装完依赖即可
 - MySQL数据库新建 `freefish` 数据库，运行sql文件
@@ -64,7 +64,8 @@
     - 详见 [elasticsearch](https://github.com/xinjiakun/Freefish/Elasticsearch.md)
     - mysql对应实体类需对应 注解es索引、类型，示例：
 
-    ``` @Document(indexName = "freefish" , type = "tbGoodPO")
+    ``` 
+		@Document(indexName = "freefish" , type = "tbGoodPO")
 		public class TbGoodPO implements Serializable {
     ```
 
