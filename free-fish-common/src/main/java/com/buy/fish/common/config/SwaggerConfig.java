@@ -36,7 +36,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("FreeFish Api Documentation")
                 .description("FreeFish交易管理后台API接口文档")
-                .termsOfServiceUrl("http://blog.exrick.cn")
+//                .termsOfServiceUrl("")
                 .contact(new Contact("Fantasy", "https://github.com/xinjiakun", "1913829181@qq.com"))
                 .version("1.0.0")
                 .build();

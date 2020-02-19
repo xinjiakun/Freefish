@@ -3,6 +3,7 @@ package com.buy.fish.service;
 import com.buy.fish.common.pojo.Result;
 import com.buy.fish.dto.entity.TbGoodPO;
 import com.buy.fish.dto.request.GoodsDTO;
+import com.buy.fish.dto.request.Page;
 import com.buy.fish.dto.response.GoodVO;
 
 import java.util.List;
@@ -16,13 +17,6 @@ public interface HomeService {
      */
     List<List<GoodVO>> getHome();
 
-    /**
-     * 实时搜索
-     *
-     * @param select
-     * @return List<GoodVO>
-     */
-    List<GoodVO> getNowSelect(String select);
 
     /**
      * 搜索
@@ -30,7 +24,7 @@ public interface HomeService {
      * @param select
      * @return List<GoodVO>
      */
-    List<TbGoodPO> getSelect(String select);
+    List<GoodVO> getSelect(String select);
 
 
     /**

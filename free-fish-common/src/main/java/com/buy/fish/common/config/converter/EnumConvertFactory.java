@@ -1,5 +1,8 @@
 package com.buy.fish.common.config.converter;
 
+import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 import org.springframework.stereotype.Component;
@@ -13,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 @SuppressWarnings("all")
 public class EnumConvertFactory implements ConverterFactory<String, BaseEnum> {
+    private final static Logger logger = LoggerFactory.getLogger(EnumConvertFactory.class);
     @Override
     public <T extends BaseEnum> Converter<String, T> getConverter(Class<T> aClass) {
         return new IntegerToBaseEnum<T>(aClass);
@@ -33,11 +37,14 @@ public class EnumConvertFactory implements ConverterFactory<String, BaseEnum> {
     }
 
     public static <T extends BaseEnum> T getIEnum(Class<T> targerType, String source) {
+        logger.info("枚举映射,类型为{},code字段值为{}",targerType,source);
         for (T obj : targerType.getEnumConstants()) {
             if (source.equals(String.valueOf(obj.getCode()))) {
+                logger.info("映射成功,枚举值为{}", JSON.toJSONString(obj));
                 return obj;
             }
         }
+        logger.error("映射失败");
         return null;
     }
 }

@@ -41,4 +41,10 @@ public class Result<T> implements Serializable {
      * 结果对象
      */
     private T result;
+
+    /**
+     * 附加对象
+     */
+    private Object object;
+
 }

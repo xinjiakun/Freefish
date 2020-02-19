@@ -77,7 +77,7 @@
         from freefish.tb_good
         <where>
             <if test="sort =='typeObj'">
-                and type_ob = "配件"
+                and type_ob = 7
             </if>
         </where>
         <if test="sort != null and sort !='typeObj'">

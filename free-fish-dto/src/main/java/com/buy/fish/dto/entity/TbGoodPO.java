@@ -17,7 +17,7 @@ import java.io.Serializable;
  */
 @Setter
 @Getter
-@Document(indexName = "freeFish" , type = "tbGoodPO")
+@Document(indexName = "freefish" , type = "tbGoodPO")
 public class TbGoodPO implements Serializable {
     private static final long serialVersionUID = 640092019396004382L;
     /**

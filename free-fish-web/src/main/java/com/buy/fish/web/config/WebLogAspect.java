@@ -45,9 +45,10 @@ public class WebLogAspect {
         logger.info("HTTP_METHOD:" + request.getMethod());
         logger.info("IP:" + request.getRemoteAddr());
         Enumeration<String> enumeration = request.getParameterNames();
+        logger.info("参数为");
         while (enumeration.hasMoreElements()) {
             String name = (String) enumeration.nextElement();
-            logger.info("name:{},value:{}", name, request.getParameter(name));
+            logger.info("{}:{}", name, request.getParameter(name));
         }
     }
 
@@ -59,6 +60,11 @@ public class WebLogAspect {
      */
     @AfterReturning(returning = "result",pointcut = "webLog()")
     public void doAfterReturning(Result result) throws Throwable{
-        logger.info("response:{},{},{}",result.getCode(),result.getMessage(), JSON.toJSONString(result.getResult()));
+        logger.info("response code{}",result.getCode());
+        logger.info("response success{}",result.isSuccess());
+        logger.info("response message{}",result.getMessage());
+        logger.info("response timestamp{}",result.getTimestamp());
+        logger.info("response result{}",JSON.toJSONString(result.getResult()));
+        logger.info("response object{}",JSON.toJSONString(result.getObject()));
     }
 }

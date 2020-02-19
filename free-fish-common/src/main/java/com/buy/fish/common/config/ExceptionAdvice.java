@@ -19,8 +19,7 @@ public class ExceptionAdvice {
 
     @ExceptionHandler
     public Result exception(Exception e) {
-        logger.error("错误信息{}", e.getStackTrace());
-        e.printStackTrace();
+        logger.error("错误信息{}", e);
         return new ResultUtil().setErrorMsg("内部错误");
     }
 }

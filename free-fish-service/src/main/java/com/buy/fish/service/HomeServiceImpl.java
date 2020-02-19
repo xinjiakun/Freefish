@@ -1,5 +1,6 @@
 package com.buy.fish.service;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.buy.fish.common.pojo.Result;
 import com.buy.fish.common.pojo.ResultUtil;
@@ -9,6 +10,7 @@ import com.buy.fish.dao.es.TbGoodPOElasticsearchMapper;
 import com.buy.fish.dto.entity.TbGoodPO;
 import com.buy.fish.dto.entity.TbPanel;
 import com.buy.fish.dto.request.GoodsDTO;
+import com.buy.fish.dto.request.Page;
 import com.buy.fish.dto.response.GoodVO;
 import org.dozer.DozerBeanMapper;
 import org.elasticsearch.action.search.SearchResponse;
@@ -65,40 +67,39 @@ public class HomeServiceImpl implements HomeService {
     private DozerBeanMapper dozerBeanMapper;
 
     public List<List<GoodVO>> getHome() {
-        List<TbPanel> tbPanels;
-
-//        return tbPanels;
         List<List<GoodVO>> homeLists = new ArrayList();
-        homeLists.add(getConverter(tbGoodMapper.queryHome("score")));
-        homeLists.add(getConverter(tbGoodMapper.queryHome("create_time")));
-        homeLists.add(getConverter(tbGoodMapper.queryHome("typeObj")));
+        try {
+            homeLists.add(getConverter(tbGoodMapper.queryHome("score")));
+            homeLists.add(getConverter(tbGoodMapper.queryHome("create_time")));
+            homeLists.add(getConverter(tbGoodMapper.queryHome("typeObj")));
+        }catch (Exception e){
+            logger.error("首页数据库查询错误",e);
+        }
+
 
         return homeLists;
     }
 
-    public List<GoodVO> getConverter(List<TbGoodPO> goodPOList){
+    public List<GoodVO> getConverter(List<TbGoodPO> goodPOList) {
         List<GoodVO> goodVOList = new ArrayList<>();
         for (TbGoodPO tbGoodPO : goodPOList) {
-            goodVOList.add(dozerBeanMapper.map(tbGoodPO,GoodVO.class));
+            goodVOList.add(dozerBeanMapper.map(tbGoodPO, GoodVO.class));
         }
+        logger.info("首页 映射转化后为{}",JSON.toJSONString(goodVOList));
         return goodVOList;
     }
 
-    @Override
-    public List<GoodVO> getNowSelect(String select) {
-        return null;
-    }
 
     @Override
-    public List<TbGoodPO> getSelect(String select) {
+    public List<GoodVO> getSelect(String select) {
         // 定义高亮字段
         HighlightBuilder.Field titleField = new HighlightBuilder.Field("title").preTags("<span>").postTags("</span>");
-        HighlightBuilder.Field contentField = new HighlightBuilder.Field("subTitle").preTags("<span>").postTags("</span>");
+        HighlightBuilder.Field contentField = new HighlightBuilder.Field("sub_title").preTags("<span>").postTags("</span>");
 
         // 构建查询内容
         QueryStringQueryBuilder queryBuilder = new QueryStringQueryBuilder(select);
         // 查询匹配的字段
-        queryBuilder.field("title").field("subTitle");
+        queryBuilder.field("title").field("sub_title");
 
         SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(queryBuilder)
                 .withHighlightFields(titleField, contentField).build();
@@ -132,7 +133,7 @@ public class HomeServiceImpl implements HomeService {
                                 tbGoodPO.setTitle(fragmentString);
                             }
                             //匹配到的subTitle字段里面的信息
-                            HighlightField contentHighlight = highlightFields.get("subTitle");
+                            HighlightField contentHighlight = highlightFields.get("sub_title");
                             if (contentHighlight != null) {
                                 Text[] fragments = contentHighlight.fragments();
                                 String fragmentString = fragments[0].string();
@@ -147,27 +148,18 @@ public class HomeServiceImpl implements HomeService {
                         return null;
                     }
                 });
-        List<TbGoodPO> list = queryForPage.getContent();
-
+        List<GoodVO> list = getConverter(queryForPage.getContent());
+        logger.info("查询到商品list为{}", JSON.toJSONString(list));
         return list;
-//        return null;
     }
 
     @Override
     public List<GoodVO> getGoods(GoodsDTO goodsDTO) {
         List<GoodVO> goodVOList = new ArrayList<>();
-        Integer lowerPrice = null;
-        Integer highPrice = null;
-        try {
-            lowerPrice = Integer.valueOf(goodsDTO.getLowerPrice());
-        } catch (NumberFormatException e) {
-            logger.error("最低价格解析错误{}", e.getMessage());
-        }
-        try {
-            highPrice = Integer.valueOf(goodsDTO.getHighPrice());
-        } catch (NumberFormatException e) {
-            logger.error("最高价格解析错误{}", e.getMessage());
-        }
+        int sum = 0;
+        //价格空值处理
+        Integer lowerPrice = getPrice(goodsDTO.getLowerPrice());
+        Integer highPrice = getPrice(goodsDTO.getHighPrice());
 
         Integer typeOb = goodsDTO.getSubjectEnum().getCode().equals(0) ? null : goodsDTO.getSubjectEnum().getCode();
         Integer oldOr = goodsDTO.getOldOrEnum().getCode().equals(0) ? null : goodsDTO.getOldOrEnum().getCode();
@@ -176,18 +168,27 @@ public class HomeServiceImpl implements HomeService {
                 lowerPrice, highPrice, typeOb, oldOr, sort);
         try {
             List<TbGoodPO> tbGoodPOS = tbGoodMapper.queryAll(lowerPrice, highPrice, typeOb, oldOr, sort);
-            logger.info("查询数据为{}", tbGoodPOS.toString());
+            logger.info("查询数据为{}", JSON.toJSONString(tbGoodPOS));
             for (TbGoodPO tbGoodPO : tbGoodPOS) {
                 goodVOList.add(dozerBeanMapper.map(tbGoodPO, GoodVO.class));
             }
+            logger.info("查询数据映射后为{}", JSON.toJSONString(goodVOList));
             logger.info("数据库查询成功");
         } catch (Exception e) {
-            logger.error("数据库查询失败{}", e.toString());
+            logger.error("数据库查询失败{}", e);
 
         }
         return goodVOList;
     }
 
+    public Integer getPrice(String price){
+        try {
+            return Integer.valueOf(price);
+        } catch (NumberFormatException e) {
+            logger.error("价格解析错误{}", e);
+            return null;
+        }
+    }
     public String sortParam(Integer sortEnum) {
         if (sortEnum.equals(0)) {
             return "score";

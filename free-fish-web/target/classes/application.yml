@@ -61,7 +61,7 @@ dozer:
     file:
       urls: classpath:spring/dozer/dozer-mappings.xml,classpath:spring/dozer/dozer-global-config.xml
 mybatis:
-#  config-location: classpath:mybatis-config.xml
+
   type-aliases-package: com.buy.fish.dto.entity
   mapper-locations: classpath* :com/buy/fish/dao/*.xml
   configuration:

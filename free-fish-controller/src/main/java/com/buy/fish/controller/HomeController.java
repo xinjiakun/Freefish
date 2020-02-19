@@ -5,6 +5,7 @@ import com.buy.fish.common.pojo.Result;
 import com.buy.fish.common.pojo.ResultUtil;
 import com.buy.fish.dto.entity.TbGoodPO;
 import com.buy.fish.dto.request.GoodsDTO;
+import com.buy.fish.dto.request.Page;
 import com.buy.fish.dto.response.GoodVO;
 import com.buy.fish.service.HomeService;
 import io.swagger.annotations.Api;
@@ -51,7 +52,7 @@ public class HomeController {
     @ApiOperation(value = "搜索")
     @RequestMapping(value = "/select", method = RequestMethod.POST)
     @ResponseBody
-    public Result<List<TbGoodPO>> getSelect(String select) {
+    public Result<List<GoodVO>> getSelect(String select) {
 //        return new ResultUtil().setData(select);
         return new ResultUtil().setData(homeService.getSelect(select));
     }

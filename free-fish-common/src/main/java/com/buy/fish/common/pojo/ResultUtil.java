@@ -29,6 +29,13 @@ public class ResultUtil<T> {
         return this.result;
     }
 
+    public Result<T> setData(T t, Object object){
+        this.result.setResult(t);
+        this.result.setCode(200);
+        this.result.setObject(object);
+        return this.result;
+    }
+
     public Result<T> setErrorMsg(String msg){
         this.result.setSuccess(false);
         this.result.setMessage(msg);
