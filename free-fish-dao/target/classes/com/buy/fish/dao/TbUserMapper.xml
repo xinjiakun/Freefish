@@ -7,14 +7,27 @@
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="headimg" column="headImg" jdbcType="VARCHAR"/>
         <result property="number" column="number" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="INTEGER"/>
+        <result property="credit" column="credit" jdbcType="INTEGER"/>
+        <result property="information" column="information" jdbcType="VARCHAR"/>
+        <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TbUserMap">
         select
-          id, name, headImg, number
+          id, name, headImg, number, email, gender, credit, information, pwd
         from freefish.tb_user
         where id = #{id}
+    </select>
+
+    <!--查询单个-通过电子邮件-->
+    <select id="queryByEmail" resultMap="TbUserMap">
+        select
+          id, name, headImg, number, email, gender, credit, information, pwd
+        from freefish.tb_user
+        where email = #{email}
     </select>
 
     <!--查询指定行数据-->

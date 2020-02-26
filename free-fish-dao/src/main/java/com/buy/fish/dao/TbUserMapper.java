@@ -23,6 +23,14 @@ public interface TbUserMapper {
     TbUserPO queryById(Integer id);
 
     /**
+     * 通过Email查询单条数据
+     *
+     * @param email 邮箱
+     * @return 实例对象
+     */
+    TbUserPO queryByEmail(String email);
+
+    /**
      * 查询指定行数据
      *
      * @param offset 查询起始位置

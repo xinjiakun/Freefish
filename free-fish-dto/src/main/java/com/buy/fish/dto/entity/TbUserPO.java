@@ -8,8 +8,8 @@ import java.io.Serializable;
 /**
  * (TbUser)实体类
  *
- * @author makejava
- * @since 2020-02-15 16:35:18
+ * @author zsj
+ * @since 2020-02-20 16:35:18
  */
 @Setter
 @Getter
@@ -31,6 +31,24 @@ public class TbUserPO implements Serializable {
     * 手机号
     */
     private String number;
-
-
+    /**
+     * 电子邮箱
+     */
+    private String email;
+    /**
+     * 性别
+     */
+    private Integer gender; //1-男、2-女
+    /**
+     * 信用额
+     */
+    private Integer credit;
+    /**
+     * 简介
+     */
+    private String information;
+    /**
+     * 密码
+     */
+    private String pwd;
 }
