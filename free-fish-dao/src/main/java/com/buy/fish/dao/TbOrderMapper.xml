@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buy.fish.dao.TbOrderMapper">
+
+    <resultMap type="com.buy.fish.dto.entity.TbOrderPO" id="TbOrderMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderId" column="orderId" jdbcType="VARCHAR"/>
+        <result property="goodId" column="goodId" jdbcType="INTEGER"/>
+        <result property="userId" column="userId" jdbcType="INTEGER"/>
+        <result property="addressId" column="addressId" jdbcType="INTEGER"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbOrderMap">
+        select
+          id, orderId, goodId, userId, addressId, state, time
+        from freefish.tb_order
+        where id = #{id}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="userOrderInsert" keyProperty="id" useGeneratedKeys="true">
+        insert into freefish.tb_order(orderId, goodId, userId, addressId, state, time)
+        values (#{orderId}, #{goodId}, #{userId}, #{addressId},#{state},#{time})
+    </insert>
+
+    <!--查询此用户ID下的所有订单数据-->
+    <select id="queryALLByUserId" resultMap="TbOrderMap">
+        SELECT
+        id,orderId,goodId,userId,addressId,state,time
+        FROM
+        freefish.tb_order
+        WHERE
+        <if test="userId != null">
+            userId = #{userId}
+        </if>
+    </select>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from freefish.tb_order where id = #{id}
+    </delete>
+
+    <!--通过orderId修改订单状态-->
+    <update id="updateState">
+        update freefish.tb_order
+        <set>
+            <if test="state != null">
+                state = #{state},
+            </if>
+        </set>
+        where id = #{orderId}
+    </update>
+</mapper>

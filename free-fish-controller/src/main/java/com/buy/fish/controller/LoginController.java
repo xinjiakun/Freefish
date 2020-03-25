@@ -1,6 +1,10 @@
 package com.buy.fish.controller;
 
+import com.buy.fish.common.pojo.Result;
+import com.buy.fish.common.pojo.ResultUtil;
 import com.buy.fish.dto.entity.TbUserPO;
+import com.buy.fish.dto.request.GoodsDTO;
+import com.buy.fish.dto.request.LoginUserDTO;
 import com.buy.fish.dto.response.GoodVO;
 import com.buy.fish.service.HomeService;
 import com.buy.fish.service.LoginService;
@@ -11,6 +15,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static sun.misc.Version.print;
 
@@ -26,19 +32,14 @@ import static sun.misc.Version.print;
 public class LoginController {
     private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @Autowired(required = false)
+    @Autowired
     private LoginService loginService;
 
     @ApiOperation(value = "登录验证")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public TbUserPO getUser(@RequestParam("userEmail") String email) {
-        if(loginService.getEmail(email)!=null){
-            logger.info("jiijiijij");
-        }
-
-        return loginService.getEmail(email);
-
+    public Result<TbUserPO> checkLoginUser(LoginUserDTO loginUserDTO) {
+        return new ResultUtil().setData(loginService.checkLoginUser(loginUserDTO));
     }
 
 }

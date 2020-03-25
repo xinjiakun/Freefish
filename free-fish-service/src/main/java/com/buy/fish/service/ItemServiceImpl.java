@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class ItemServiceImpl implements ItemService {
 
-    private final static Logger logger = LoggerFactory.getLogger(HomeService.class);
+    private final static Logger logger = LoggerFactory.getLogger(ItemServiceImpl.class);
     @Autowired
     private RedisTemplate redisTemplate;
     @Resource

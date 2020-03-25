@@ -13,20 +13,22 @@
         <result property="aliImages2" column="ali_images_2" jdbcType="VARCHAR"/>
         <result property="aliImages3" column="ali_images_3" jdbcType="VARCHAR"/>
         <result property="aliImages4" column="ali_images_4" jdbcType="VARCHAR"/>
-        <result property="typeOb" column="type_ob" jdbcType="VARCHAR"/>
+        <result property="typeOb" column="type_ob" jdbcType="INTEGER"/>
         <result property="oldOr" column="old_or" jdbcType="INTEGER"/>
         <result property="score" column="score" jdbcType="OTHER"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
         <result property="userId" column="user_id" jdbcType="INTEGER"/>
         <result property="scoreNum" column="score_num" jdbcType="INTEGER"/>
+        <result property="goodState" column="good_state" jdbcType="INTEGER"/>
+        <result property="postage" column="postage" jdbcType="INTEGER"/>
     </resultMap>
 
 
     <!--查询单个-->
     <select id="queryById" resultMap="TbGoodMap">
         select
-          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num,good_state,postage
         from freefish.tb_good
         where id = #{id}
     </select>
@@ -34,7 +36,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TbGoodMap">
         select
-          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num,good_state,postage
         from freefish.tb_good
         limit #{offset}, #{limit}
     </select>
@@ -42,7 +44,7 @@
     <!--列表页条件查询-->
     <select id="queryAll" resultMap="TbGoodMap">
         select
-          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
+          id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num,good_state,postage
         from freefish.tb_good
         <where>
             <if test="lowerPrice != null and highPrice != null ">
@@ -72,24 +74,24 @@
 
     <!--首页查询-->
     <select id="queryHome" resultMap="TbGoodMap">
-        select
-        id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num
-        from freefish.tb_good
-        <where>
-            <if test="sort =='typeObj'">
-                and type_ob = 7
-            </if>
-        </where>
-        <if test="sort != null and sort !='typeObj'">
-            order by ${sort} desc
+    select
+    id, sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, user_id, score_num,good_state,postage
+    from freefish.tb_good
+    <where>
+        <if test="sort =='typeObj'">
+            and type_ob = 7
         </if>
-        limit 4
+    </where>
+    <if test="sort != null and sort !='typeObj'">
+        order by ${sort} desc
+    </if>
+    limit 4
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into freefish.tb_good(sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, score_num)
-        values (#{skuId}, #{title}, #{subTitle}, #{aliImage}, #{price}, #{aliImages1}, #{aliImages2}, #{aliImages3}, #{aliImages4}, #{typeOb}, #{oldOr}, #{score}, #{createTime}, #{updateTime},#{scoreNum})
+        insert into freefish.tb_good(sku_id, title, sub_title, ali_image, price, ali_images_1, ali_images_2, ali_images_3, ali_images_4, type_ob, old_or, score, create_time, update_time, score_num,good_state,postage,user_id)
+        values (#{skuId}, #{title}, #{subTitle}, #{aliImage}, #{price}, #{aliImages1}, #{aliImages2}, #{aliImages3}, #{aliImages4}, #{typeOb}, #{oldOr}, #{score}, #{createTime}, #{updateTime},#{scoreNum},#{goodState},#{postage},#{userId})
     </insert>
 
     <!--通过主键修改数据-->
@@ -141,8 +143,25 @@
             <if test="scoreNum != null">
                 score_num = #{scoreNum},
             </if>
+            <if test="goodState != null">
+                good_state = #{goodState},
+            </if>
+            <if test="postage != null">
+                postage = #{postage},
+            </if>
         </set>
         where id = #{id}
+    </update>
+
+    <!--通过Id修改商品状态-->
+    <update id="updateGoodState">
+        update freefish.tb_good
+        <set>
+            <if test="goodState != null">
+                good_state = #{goodState},
+            </if>
+        </set>
+        where id = #{goodId}
     </update>
 
     <!--通过主键删除-->

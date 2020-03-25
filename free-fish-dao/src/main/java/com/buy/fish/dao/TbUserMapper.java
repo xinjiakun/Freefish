@@ -4,6 +4,7 @@ import com.buy.fish.dto.entity.TbUserPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
+import com.buy.fish.dto.request.RegisterUserDTO;
 
 /**
  * (TbUser)表数据库访问层
@@ -49,12 +50,12 @@ public interface TbUserMapper {
     List<TbUserPO> queryAll(TbUserPO tbUserPO);
 
     /**
-     * 新增数据
+     * 新增数据-注册
      *
-     * @param tbUserPO 实例对象
-     * @return 影响行数
+     * @param registerUserDTO 实例对象
+     * @return 返回数据库自增主键，唯一性
      */
-    int insert(TbUserPO tbUserPO);
+    int registerInsert(RegisterUserDTO registerUserDTO);
 
     /**
      * 修改数据
@@ -63,6 +64,46 @@ public interface TbUserMapper {
      * @return 影响行数
      */
     int update(TbUserPO tbUserPO);
+
+    /**
+     * 修改名字
+     *
+     * @param
+     * @return 影响行数
+     */
+    int updateName(@Param("id") int id,@Param("name")String name);
+
+    /**
+     * 修改头像
+     *
+     * @param
+     * @return 影响行数
+     */
+    int updateHeadImg(@Param("id") int id,@Param("Headimg")String img);
+
+    /**
+     * 修改签名
+     *
+     * @param
+     * @return 影响行数
+     */
+    int updateInformation(@Param("id") int id,@Param("information")String information);
+
+    /**
+     * 修改性别
+     *
+     * @param
+     * @return 影响行数
+     */
+    int updateGender(@Param("id") int id,@Param("gender")int gender);
+
+    /**
+     * 修改密码
+     *
+     * @param
+     * @return 影响行数
+     */
+    int updatePwd(@Param("id") int id,@Param("pwd")String pwd);
 
     /**
      * 通过主键删除数据

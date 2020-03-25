@@ -34,6 +34,7 @@ public class ItemController {
     @RequestMapping(value = "/good", method = RequestMethod.POST)
     @ResponseBody
     public Result<GoodVO> getGood(Integer id) {
+
         return new ResultUtil().setData(itemService.getGoodDetails(id));
     }
 

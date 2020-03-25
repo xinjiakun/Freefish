@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * (TbUser)实体类
@@ -51,4 +53,8 @@ public class TbUserPO implements Serializable {
      * 密码
      */
     private String pwd;
+    /**
+     * 用户地址 1-n
+     */
+//    private Set<TbUserAddressPO> TbUserAddressPO = new HashSet<TbUserAddressPO>();
 }

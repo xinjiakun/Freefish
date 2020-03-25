@@ -50,7 +50,11 @@ public class GoodVO implements Serializable {
      */
     private ImagesDO imagesDO;
     /**
-     * 评论
+     * 评论```````````
      */
     private List<CommentVO> commentVOS;
+    /**
+     * 商品邮费
+     */
+    private Integer postage;
 }

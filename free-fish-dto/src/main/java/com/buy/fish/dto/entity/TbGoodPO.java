@@ -28,11 +28,9 @@ public class TbGoodPO implements Serializable {
     /**
     * 商品编号
     */
-
     private Integer skuId;
     /**
     * 标题
-
     */
     private String title;
     /**
@@ -66,7 +64,7 @@ public class TbGoodPO implements Serializable {
     /**
     * 类别
     */
-    private String typeOb;
+    private Integer typeOb;
     /**
     * 新旧程度
     */
@@ -91,5 +89,12 @@ public class TbGoodPO implements Serializable {
      * 参与评分人数
      */
     private float scoreNum;
-
+    /**
+     * 商品状态
+     */
+    private Integer goodState;
+    /**
+     * 商品邮费
+     */
+    private Integer postage;
 }

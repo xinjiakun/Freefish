@@ -74,4 +74,11 @@ public interface TbGoodMapper {
      */
     int deleteById(Integer id);
 
+    /**
+     * 通过id修改商品状态
+     *
+     * @param id 主键
+     * @return 影响行数
+     */
+    int updateGoodState(@Param("goodId") int goodId,@Param("goodState")int state);
 }

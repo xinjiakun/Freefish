@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.buy.fish.dao.TbUserAddressMapper">
+
+    <resultMap type="com.buy.fish.dto.entity.TbUserAddressPO" id="TbUserAddressMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="province" column="province" jdbcType="VARCHAR"/>
+        <result property="city" column="city" jdbcType="VARCHAR"/>
+        <result property="county" column="county" jdbcType="VARCHAR"/>
+        <result property="street" column="street" jdbcType="VARCHAR"/>
+        <result property="userId" column="userId" jdbcType="INTEGER"/>
+        <result property="mobilePhone" column="mobilePhone" jdbcType="VARCHAR"/>
+        <result property="landLine" column="landLine" jdbcType="VARCHAR"/>
+        <result property="areaCode" column="areaCode" jdbcType="VARCHAR"/>
+        <result property="defaultAddress" column="defaultAddress" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="checked" column="checked" jdbcType="INTEGER"/>
+        <result property="provinceId" column="provinceId" jdbcType="INTEGER"/>
+        <result property="cityId" column="cityId" jdbcType="INTEGER"/>
+        <result property="countyId" column="countyId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbUserAddressMap">
+        select
+          id, province, city, county, street, userId, mobilePhone, landLine, areaCode, defaultAddress, name, checked, provinceId, cityId, countyId
+        from freefish.tb_useraddress
+        where id = #{id}
+    </select>
+
+    <!--查询此用户ID下的所有地址数据-->
+    <select id="queryALLByUserId" resultMap="TbUserAddressMap">
+        SELECT
+        id,province,city,county,street,userId,mobilePhone,landLine,areaCode,defaultAddress,name,checked,provinceId,cityId,countyId
+        FROM
+        freefish.tb_useraddress
+        WHERE
+        <if test="userId != null">
+            userId = #{userId}
+        </if>
+    </select>
+
+    <!--新增一条用户地址-->
+    <insert id="userAddressInsert" parameterType="com.buy.fish.dto.entity.TbUserAddressPO" useGeneratedKeys="true" keyProperty="id">
+        insert into freefish.tb_useraddress(province,city,county,street,userId,mobilePhone,landLine,areaCode,defaultAddress,name,checked,provinceId,cityId,countyId)
+        values (#{province}, #{city}, #{county}, #{street}, #{userId}, #{mobilePhone}, #{landLine}, #{areaCode}, #{defaultAddress}, #{name}, #{checked}, #{provinceId}, #{cityId}, #{countyId})
+    </insert>
+
+    <!--通过主键更改默认地址数据-->
+    <update id="updateDefaultAddressById">
+        update freefish.tb_useraddress
+        <set>
+            <if test="defaultAddress != null">
+                defaultAddress = #{defaultAddress},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键更改选中地址标记-->
+    <update id="updateCheckedAddressById">
+        update freefish.tb_useraddress
+        <set>
+            <if test="checked != null">
+                checked = #{checked},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键修改一条用户地址数据-->
+    <update id="updateUserAddressById">
+        update freefish.tb_useraddress
+        <set>
+            <if test="newtbUserAddress.province != null and newtbUserAddress.province != ''">
+                province = #{newtbUserAddress.province},
+            </if>
+            <if test="newtbUserAddress.city != null and newtbUserAddress.city != ''">
+                city = #{newtbUserAddress.city},
+            </if>
+            <if test="newtbUserAddress.county != null and newtbUserAddress.county != ''">
+                county = #{newtbUserAddress.county},
+            </if>
+            <if test="newtbUserAddress.street != null and newtbUserAddress.street != ''">
+                street = #{newtbUserAddress.street},
+            </if>
+            <if test="newtbUserAddress.userId != null">
+                userId = #{newtbUserAddress.userId},
+            </if>
+            <if test="newtbUserAddress.mobilePhone != null and newtbUserAddress.mobilePhone != ''">
+                mobilePhone = #{newtbUserAddress.mobilePhone},
+            </if>
+            <if test="newtbUserAddress.landLine != null and newtbUserAddress.landLine != ''">
+                landLine = #{newtbUserAddress.landLine},
+            </if>
+            <if test="newtbUserAddress.areaCode != null and newtbUserAddress.areaCode != ''">
+                areaCode = #{areaCode},
+            </if>
+            <if test="newtbUserAddress.defaultAddress != null">
+                defaultAddress = #{newtbUserAddress.defaultAddress},
+            </if>
+            <if test="newtbUserAddress.name != null and newtbUserAddress.name != ''">
+                name = #{newtbUserAddress.name},
+            </if>
+            <if test="newtbUserAddress.checked != null and newtbUserAddress.checked != ''">
+                checked = #{newtbUserAddress.checked},
+            </if>
+            <if test="newtbUserAddress.provinceId != null">
+                provinceId = #{newtbUserAddress.provinceId},
+            </if>
+            <if test="newtbUserAddress.cityId != null">
+                cityId = #{newtbUserAddress.cityId},
+            </if>
+            <if test="newtbUserAddress.countyId != null">
+                countyId = #{newtbUserAddress.countyId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除一条用户地址-->
+    <delete id="deleteUserAddressById">
+        delete from freefish.tb_useraddress where id = #{id}
+    </delete>
+
+</mapper>

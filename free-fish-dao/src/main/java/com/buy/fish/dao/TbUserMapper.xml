@@ -59,10 +59,10 @@
         </where>
     </select>
 
-    <!--新增所有列-->
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into freefish.tb_user(name, headImg, number)
-        values (#{name}, #{headimg}, #{number})
+    <!--新增注册列数据-->
+    <insert id="registerInsert" parameterType="com.buy.fish.dto.entity.TbUserPO" useGeneratedKeys="true" keyProperty="id">
+        insert into freefish.tb_user(name, email, credit, pwd)
+        values (#{name}, #{email}, #{credit}, #{pwd})
     </insert>
 
     <!--通过主键修改数据-->
@@ -77,6 +77,59 @@
             </if>
             <if test="number != null and number != ''">
                 number = #{number},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键修改名字-->
+    <update id="updateName">
+        update freefish.tb_user
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键修改头像-->
+    <update id="updateHeadImg">
+        update freefish.tb_user
+        <set>
+            <if test="Headimg != null and Headimg != ''">
+                headimg = #{Headimg},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键修改签名-->
+    <update id="updateInformation">
+        update freefish.tb_user
+        <set>
+            <if test="information != null and information != ''">
+                information = #{information},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键修改性别-->
+    <update id="updateGender">
+        update freefish.tb_user
+        <set>
+            gender = #{gender}
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键修改密码-->
+    <update id="updatePwd">
+        update freefish.tb_user
+        <set>
+            <if test="pwd != null and pwd != ''">
+                pwd = #{pwd}
             </if>
         </set>
         where id = #{id}
